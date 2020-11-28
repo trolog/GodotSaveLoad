@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/gobackButton.tscn" type="PackedScene" id=1]
+
+[node name="level3" type="Node2D"]
+
+[node name="btnBack" parent="." instance=ExtResource( 1 )]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 286.0
+margin_bottom = 126.0
+text = "Previous Level"
+reference_path = "res://scenes/level2.tscn"
+game_level = 2
+
+[node name="lblLevel" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 8.0
+margin_right = 408.0
+margin_bottom = 56.0
+text = "LEVEL3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

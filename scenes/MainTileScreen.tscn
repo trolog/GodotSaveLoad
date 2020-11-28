@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/retro-game-background-For-Free-Wallpaper.jpg" type="Texture" id=1]
+[ext_resource path="res://objects/menu_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/continue_button.gd" type="Script" id=3]
+
+[node name="MainTileScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background_image" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.37793
+anchor_top = 0.488333
+anchor_right = 0.62207
+anchor_bottom = 0.821667
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="mnuNewGame" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 249.0
+margin_bottom = 64.0
+focus_neighbour_top = NodePath("../mnuExit")
+focus_neighbour_bottom = NodePath("../mnuContinue")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "New Game"
+reference_path = "res://scenes/level1.tscn"
+start_focused = true
+game_level = 1
+
+[node name="mnuContinue" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 68.0
+margin_right = 249.0
+margin_bottom = 132.0
+focus_neighbour_top = NodePath("../mnuNewGame")
+focus_neighbour_bottom = NodePath("../mnuExit")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Continue"
+script = ExtResource( 3 )
+
+[node name="mnuExit" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 136.0
+margin_right = 249.0
+margin_bottom = 200.0
+focus_neighbour_top = NodePath("../mnuContinue")
+focus_neighbour_bottom = NodePath("../mnuNewGame")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Exit"
